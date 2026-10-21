@@ -73,7 +73,7 @@ test_dataset = RuscoDataset("./poggio_rusco/test_rusco_data.csv")
 test_dataloader = DataLoader(test_dataset, batch_size=1, shuffle=True)
 
 KiNet = StdNet()
-net_parameters = torch.load("./NetParams/KiNetV1_1024.pth",weights_only=True)
+net_parameters = torch.load("./NetParams/KiNetV1_256.pth",weights_only=True)
 KiNet.load_state_dict(net_parameters)
 
 device = torch.device('cuda:0' if torch.cuda.is_available() else 'cpu')
@@ -84,9 +84,8 @@ KiNet = KiNet.to(device)
 
 print(f"test results: {test_net(KiNet, test_dataloader)}")
 
-raw_test_data = pd.read_csv( "./poggio_rusco/test_rusco_data.csv", dtype = {'day':np.int32,
-                                                                           'month':np.int32,
-                                                                           'year':np.int32,
+raw_test_data = pd.read_csv( "./poggio_rusco/test_rusco_data.csv", dtype = {'xDate':np.float32,
+                                                                           'yDate':np.float32,
                                                                            't2m_now':np.float32,
                                                                            't2m_next':np.float32} )
 
