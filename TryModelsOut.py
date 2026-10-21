@@ -84,7 +84,7 @@ KiNet = KiNet.to(device)
 
 print(f"test results: {test_net(KiNet, test_dataloader)}")
 
-raw_test_data = pd.read_csv( "/home/federico_menegazzo/Desktop/Programming/python_projects/analisi_dati_ki/poggio_rusco/test_rusco_data.csv", dtype = {'day':np.int32,
+raw_test_data = pd.read_csv( "./poggio_rusco/test_rusco_data.csv", dtype = {'day':np.int32,
                                                                            'month':np.int32,
                                                                            'year':np.int32,
                                                                            't2m_now':np.float32,
