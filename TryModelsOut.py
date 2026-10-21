@@ -69,11 +69,11 @@ def test_net(net, test_loader):
     return avg_error
 
 
-test_dataset = RuscoDataset("/home/federico_menegazzo/Desktop/Programming/python_projects/analisi_dati_ki/poggio_rusco/test_rusco_data.csv")
+test_dataset = RuscoDataset("./poggio_rusco/test_rusco_data.csv")
 test_dataloader = DataLoader(test_dataset, batch_size=1, shuffle=True)
 
 KiNet = StdNet()
-net_parameters = torch.load("./NetParams/KiNetV1_256.pth",weights_only=True)
+net_parameters = torch.load("./NetParams/KiNetV1_1024.pth",weights_only=True)
 KiNet.load_state_dict(net_parameters)
 
 device = torch.device('cuda:0' if torch.cuda.is_available() else 'cpu')
@@ -114,4 +114,5 @@ for indx, entry in raw_test_data.iterrows():
 
 plt.plot(raw_test_data["t2m_now"].values)
 plt.plot(iterative_model)
+plt.grid()
 plt.show()
