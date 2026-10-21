@@ -21,7 +21,7 @@ The pipeline is split into two primary components: a robust data preprocessing s
 ---
 
 ### 2. Neural Network Model (`StdNet`)
-Implemented in **PyTorch**, `StdNet` is a fully connected feed-forward neural network built to predict the next day's temperature ($t_{2m\text{\_next}}$) based on temporal coordinates and the current temperature.
+Implemented in **PyTorch**, `StdNet` is a fully connected feed-forward neural network built to predict the next day's temperature ($t_{2m,\text{next}}$) based on temporal coordinates and the current temperature.
 
 * **Input Features ($3$):** `xDate`, `yDate`, `t2m_now`
 * **Hidden Layers:** Three dense hidden layers with **512 units each**, utilizing `Sigmoid` activation functions.
