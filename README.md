@@ -1,10 +1,10 @@
-# 🌦️ Poggio Rusco Temperature Predictor (`PoggioRuscoTemps`)
+# Poggio Rusco Temperature Predictor (`PoggioRuscoTemps`)
 
 A PyTorch-based machine learning project designed to predict localized daily 2m temperatures ($t_{2m}$) in **Poggio Rusco** (Latitude: 44, Longitude: 11) using historical weather records and continuous cyclical date encodings.
 
 ---
 
-## 🏗️ Project Architecture & Pipeline
+## Project Architecture & Pipeline
 
 The pipeline is split into two primary components: a robust data preprocessing script and a deep feed-forward neural network.
 
@@ -48,13 +48,13 @@ class StdNet(nn.Module):
 
 ```
 
-### 3. 📊 Results & Autoregressive Simulation
+### 3. Results & Autoregressive Simulation
 
 The model is optimized using Mean Squared Error (MSE) loss and the Adam optimizer ($\text{lr} = 0.001$). Beyond single-step evaluation, the repository includes an iterative/autoregressive evaluation loop (TryModelsOut.py), where the model's prediction dynamically feeds back as the next step's input to test long-term trajectory tracking.
 
 ### 4. Actual vs. Iterative Predicted Temperature Plot
 
-## 📊 Results & Autoregressive Simulation
+## Results & Autoregressive Simulation
 
 To evaluate how training dynamics scale, `StdNet` was trained across **six different batch sizes** ($32, 64, 128, 256, 512, 1024$). The resulting model weights are stored in the `./NetParams` directory following this naming convention:
 
